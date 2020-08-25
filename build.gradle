@@ -1,3 +1,11 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'com.vanniktech:gradle-maven-publish-plugin:0.8.0'
+	}
+}
 plugins {
 	id 'org.springframework.boot' version '2.3.3.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
@@ -19,6 +27,9 @@ dependencies {
 	}
 }
 
+
 test {
 	useJUnitPlatform()
 }
+
+apply plugin: "com.vanniktech.maven.publish"
